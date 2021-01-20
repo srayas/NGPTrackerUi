@@ -1,0 +1,33 @@
+<app-nav></app-nav>
+<div class="col-md-6 offset-md-3">
+<h2>Create Employe</h2>
+<form #loginForm="ngForm" (ngSubmit) ="onSubmit()">
+    <small class="text-danger" >{{msg}}</small>
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" id="firstName"
+            [(ngModel)] = "employee.firstName" name = "firstName"#firstName="ngModel"[class.is-invalid]="firstName.invalid && firstName.touched" required>
+            <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched" >Firstname is required field</small>
+    </div>
+    <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" id="lastName"
+                [(ngModel)] = "employee.lastName" name = "lastName" #lastName="ngModel"[class.is-invalid]="lastName.invalid && lastName.touched" required>
+                <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched" >Lastname is required field</small>
+    </div>
+        <div class="form-group">
+                <label>Email Id</label>
+                <input type="email"  id="emailId"
+                    [(ngModel)] = "employee.emailId" name = "emailId" class="form-control is-invalid" placeholder="Email address" required autofocus #email="ngModel"[class.is-invalid]="email.invalid && email.touched" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+                    <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched" >Email ID is required field</small> -->
+                   <div *ngIf="email.errors && (email.invalid) && (email.touched)">
+                          <small class="text-danger" *ngIf="email.errors.required">Email ID is required field</small>
+                          <small class="text-danger" *ngIf="email.errors.pattern">Please enter a valid email</small>
+                   </div>
+        </div>
+
+        <button [disabled]="loginForm.form.invalid" class="btn btn-success" type="submit">Submit</button>
+
+
+</form>
+</div>
