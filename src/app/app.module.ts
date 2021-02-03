@@ -11,7 +11,8 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
-
+import { NgpIssuesComponent } from './ngp-issues/ngp-issues.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { NavComponent } from './nav/nav.component';
     UpdateEmployeeComponent,
     EmployeeDetailsComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    NgpIssuesComponent
   ],
   imports: [
     BrowserModule,

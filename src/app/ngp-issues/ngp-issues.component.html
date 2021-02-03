@@ -1,0 +1,34 @@
+<div class="row col ">
+    <div class="col-md-2"><h2>NGP Issue List</h2></div>
+    <div class="col-md-2" *ngFor = "let issues  of issues"><button (click)= "issuesDetails(issues.id)" class="btn btn-primary" style="margin-left: 10px">Add new Issue</button></div>
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="MailSubSearch" aria-label="Search">
+    
+        <div class="col-md-2 serchBox"><button class="btn btn-outline-success " type="submit">Search</button></div>
+  </form>
+</div>
+<table class="table table-striped">
+    <thead>
+        <th>Mail Subject</th>
+        <th>Category</th>
+        <th>Sevierity</th>
+        <th>Status</th>
+        <th>Next Step</th>
+        <th>Issue Date</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let issues  of issues" >
+            <td>{{issues.mailSub}}</td>
+            <td>{{issues.category}}</td>
+            <td>{{issues.sevierity}}</td>
+            <td>{{issues.status}}</td>
+            <td>{{issues.nextStep}}</td>
+            <td>{{issues.issue_date}}</td>
+            <td>
+                <button (click)= "updateIssue(issues.id)" class="btn btn-info">Update</button>
+                <button (click)= "issuesDetails(issues.id)" class="btn btn-success" style="margin-left: 10px">View</button>
+                
+            </td> 
+        </tr>
+    </tbody>
+
