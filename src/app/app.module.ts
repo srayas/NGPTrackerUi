@@ -12,7 +12,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { NgpIssuesComponent } from './ngp-issues/ngp-issues.component';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
 @NgModule({
   declarations: [
     AppComponent,
