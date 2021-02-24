@@ -10,7 +10,7 @@ import { filter } from 'minimatch';
   styleUrls: ['./ngp-issues.component.css']
 })
 export class NgpIssuesComponent implements OnInit {
-
+  name: string="";
   issues!:Issues[];
   constructor(private employeService: EmployeeService,
     private router:Router) { }
@@ -18,6 +18,8 @@ export class NgpIssuesComponent implements OnInit {
   ngOnInit(): void {
   
     this.getIssueList();
+    
+
   }
   // tslint:disable-next-line: typedef
   private getIssueList(){
@@ -26,11 +28,16 @@ export class NgpIssuesComponent implements OnInit {
     } );
   }
   updateIssue(id: number){
-    this.router.navigate(['employee-details', id]);
+    this.router.navigate(['update-issue', id]);
   }
   issuesDetails(id: number){
-    this.router.navigate(['update-employee', id]);
+    this.router.navigate(['view-issue', id]);
   }
-  
+  createIssue(){
+    this.router.navigate(['add-new-issue']);
+  }
+  searchOnClick(){
+    console.log(this.name)
+  }
 }
-export  class NgMultiSelectDropDownModule {}
+

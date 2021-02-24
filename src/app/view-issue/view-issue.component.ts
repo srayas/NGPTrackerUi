@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Issues } from '../employee-list/issues';
+import { ActivatedRoute } from '@angular/router';
+import { EmployeeService } from '../employee-list/employee.service';
 
 @Component({
   selector: 'app-view-issue',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewIssueComponent implements OnInit {
 
-  constructor() { }
+  id!: number;
+  issue!:Issues;
+  constructor(private route: ActivatedRoute, private employeService: EmployeeService) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+
+    this.issue = new Issues();
+    this.employeService.getIssueByID(this.id).subscribe(data => {
+      this.issue = data;
+    });
+    }
   }
 
-}
+

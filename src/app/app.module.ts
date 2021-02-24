@@ -12,6 +12,9 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { NgpIssuesComponent } from './ngp-issues/ngp-issues.component';
+import { AddNewIssueComponent } from './add-new-issue/add-new-issue.component';
+import { UpdateIssueComponent } from './update-issue/update-issue.component';
+import { ViewIssueComponent } from './view-issue/view-issue.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { NgpIssuesComponent } from './ngp-issues/ngp-issues.component';
     EmployeeDetailsComponent,
     LoginComponent,
     NavComponent,
-    NgpIssuesComponent
+    NgpIssuesComponent,
+    AddNewIssueComponent,
+    UpdateIssueComponent,
+    ViewIssueComponent
   ],
   imports: [
     BrowserModule,

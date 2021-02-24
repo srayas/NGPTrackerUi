@@ -1,0 +1,79 @@
+<div class="col-md-6 offset-md-3">
+    <h2>Add new Issue</h2>
+    <form (ngSubmit) ="onSubmit()" #issueForm="ngForm" >
+            <small class="text-danger" >{{msg}}</small>
+    <div class="form-group">    
+        Mail Subject
+        <br>
+        <input type="text" class="form-control" id="mailSub"
+            [(ngModel)] = "issues.mailSub" name = "mailSub"#mailSub="ngModel"[class.is-invalid]="mailSub.invalid && mailSub.touched" required placeholder="Enter Mail Subject Here">
+            <small class="text-danger" [class.d-none]="mailSub.valid || mailSub.untouched" >Mail SUbject is required field</small>
+    </div> 
+    <div class="form-group">    
+            Category
+            <br>
+            <select required  type="text"
+            class="form-control"name="category" [(ngModel)] = "issues.category" #category="ngModel"[class.is-invalid]="category.untouched" required>
+            <small class="text-danger" [class.d-none]="category.touched" >Please Select the Category</small>
+            <option value="Test1">
+            Test1
+            </option>
+            <option value="Test2">
+                    Test2
+                    </option>
+                    <option value="Test3">
+                            Test3
+                            </option>
+
+            </select>
+            </div>
+            <div class="form-group">    
+                    Sevierity
+                    <br>
+                    <select required  type="text"
+                    class="form-control"name="sevierity" [(ngModel)] = "issues.sevierity" >
+                    <option value="S1">
+                    S1
+                    </option>
+                    <option value="S2">
+                           S2
+                            </option>
+                            <option value="S3">
+                                    S3
+                                    </option>
+        
+                    </select>
+                </div>
+                <div class="form-group">    
+                        Status
+                        <br>
+                        <select required  type="text"
+                        class="form-control"name="status" [(ngModel)] = "issues.status">
+                        
+                        <option value="Acknowledged">
+                        Acknowledged
+                        </option>
+                        <option value="WIP">
+                               WIP
+                                </option>
+                                <option value="PWC">
+                                        PWC
+                                        </option>
+                                        <option value="Resolved">
+                                                Resolved
+                                                </option>
+            
+                        </select>
+                        
+                    </div>
+                    <div class="form-group">    
+                            Next Step
+                            <br>
+                            <input type="text" class="form-control" id="nextStep"
+                                [(ngModel)] = "issues.nextStep" name = "nextStep"  placeholder="Enter Next Step Here">
+                                
+                        </div> 
+    
+    <button [disabled]="issueForm.form.invalid" class="btn btn-success" type="submit">Submit</button>
+     </form>
+</div>
