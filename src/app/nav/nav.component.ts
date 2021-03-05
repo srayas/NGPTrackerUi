@@ -7,7 +7,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
+  
+    title = 'NGPTeam';
+  
   
   constructor() { }
 
